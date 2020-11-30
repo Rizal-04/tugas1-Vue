@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script type="module">
+        import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.esm.browser.js'
+    </script>
+</head>
+<body>
+    <div id="app-1">
+        <p>{{ message }}</p>
+        <input v-model="message" placeholder="Masukan">
+        <button v-on:click="reverseMessage">Klik Untuk balik nama</button>
+    </div>
+</body>
+<script>
+    var app1 = new Vue({
+        el: '#app-1',
+        data: {
+            message: 'Rizal muhaimin'
+        },
+        methods: {
+            reverseMessage: function() {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+</html>
